@@ -1,0 +1,216 @@
+<div class="" >
+    <div class="setting-edit">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-sets"><span class="tex-sets">Emergency<span class="span-set"> <i (click)="dialogRef.close()"
+                  class="fa fa-times-circle"></i></span> </span>
+          </div>
+        </div>
+      </div>
+  
+  <!-- Sass --><div class="container back-head-color">
+    <!--     <div class="row">
+                  <div class="col-md-6">
+                  <label><b>Employee Name:</b></label><span>  {{EmpDetails.userName}}</span>
+                  
+                    </div>
+                  
+                    <div class="col-md-6">
+                        <label><b>Employee Code:</b></label><span>   {{EmpDetails.genId}}</span>
+                  
+                      </div>
+                  
+                  
+                  </div> -->
+              
+              </div>
+  
+      <div class="row pad-setting">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Emergency</a>
+          </li>
+  
+  
+        </ul>
+        <div class="tab-content setting-tab-width" id="myTabContent">
+  
+  
+  
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="text-sets edu"><span class="tex-sets">Emergency</span>
+            </div>
+            <div class="row padd-set">
+  
+              <div class="col-md-12">
+                <div style="overflow-x:auto;">
+                  
+
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label><b>Education Level</b></label>
+                   
+                        <select  type="text"  name="education" class="form-control" formControlName="education" [ngClass]="{ 'is-invalid': submitted && f.education.errors }"  >
+                                      
+                            <option selected="true" id="selct-opt" disabled>---Select Education Level---</option>
+                          <option value="Graduation">School</option>
+                                  <option value="Post Graduation">Graduation</option>
+                                 <option value="P.hd<">Post Graduation</option>
+                                   <option value="Doctrate">Doctrate</option>
+                          
+                          
+                          
+                          </select>
+                        
+                        
+                        
+                        
+                        
+                          <div class="alert alert-danger" [hidden]="registerForm.controls.education.untouched || registerForm.controls.education.valid">
+                               education level is required
+                            </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>    <b>Qualification / Degree*:</b></label>
+       
+                          <select  type="text"  name="qualification" class="form-control" formControlName="qualification" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }"  >
+                                      
+                            <option selected="true" id="selct-opt" disabled>---Select Education Level---</option>
+                          <option value="Graduation">School</option>
+                                  <option value="Post Graduation">Graduation</option>
+                                 <option value="P.hd<">Post Graduation</option>
+                                   <option value="Doctrate">Doctrate</option>
+                          
+                          
+                          
+                          </select>
+                        
+                        
+                          <div class="alert alert-danger" [hidden]="registerForm.controls.qualification.untouched || registerForm.controls.qualification.valid">
+                                A valid Qualification is required
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>College</b></label>
+                        <input type="text" formControlName="College" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.College.errors }" />
+                        <div class="alert alert-danger" [hidden]="registerForm.controls.College.untouched || registerForm.controls.College.valid">
+                                College / Institute / Univ is required 
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <label><b>Area of Specilization</b></label>
+                        <input type="text" formControlName="spec" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.spec.errors }" />
+                        <div class="alert alert-danger" [hidden]="registerForm.controls.spec.untouched || registerForm.controls.spec.valid">
+                                Area of specilization is required
+                              </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label>    <b>Year of passing:</b></label>
+       
+                          <select  type="text"  name="year" class="form-control" formControlName="year" [ngClass]="{ 'is-invalid': submitted && f.year.errors }"  >
+                                      
+                            <option selected="true" id="selct-opt" disabled>---Year of passing---</option>
+                          <option value="2010">2010</option>
+                                  <option value="2012">2012</option>
+                                 <option value="2014">2014</option>
+                                   <option value="2016">2016</option>
+                          
+                          
+                          
+                          </select>
+                        
+                        
+                          <div class="alert alert-danger" [hidden]="registerForm.controls.year.untouched || registerForm.controls.year.valid">
+                                year of passing  is required
+                            </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label><b>Score</b></label>
+                        <input type="text" formControlName="score" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.score.errors }" />
+                        <div class="alert alert-danger" [hidden]="registerForm.controls.score.untouched || registerForm.controls.score.valid">
+                                Score  is required
+                              </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="form-group">
+                        <label>  <b>Is this your Highest level of education:</b></label>
+                       
+                        <div class="">
+                            <input type="radio" formControlName="empHighest" [ngClass]="{ 'is-invalid': submitted && f.empHighest.errors }" value="Y">Yes
+                            <input type="radio" formControlName="empHighest" [ngClass]="{ 'is-invalid': submitted && f.empHighest.errors }" value="N">No
+                          </div>
+                       
+                          
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <button  [disabled]="!registerForm.valid" class="btn set-colors">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            Two
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            three
+          </div>
+        </div>
+  
+  
+  
+      </div>
+  
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  

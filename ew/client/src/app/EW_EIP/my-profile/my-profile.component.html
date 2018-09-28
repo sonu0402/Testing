@@ -1,0 +1,116 @@
+<div class="container-fluid">
+    <app-navbar></app-navbar>
+    <div class="employee-profile">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="myprofile">
+
+
+                    <div class="top-sec-head"><span class="emp-naming"><b><strong>Employee Profile
+                                </strong></b></span></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row detail-ggsl-set">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="myprofile-image">
+                            <img src="assets/sanchit.png" class="img-responsive pro-image" />
+                            <div class="edit-pro">
+                                <a href="javascript:void(0)" class="edit-pic"><b>Edit Picture</b> </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h6 class="emp-name-title"><b class="mrs-jen">{{EmpDetails?.userName}}</b><small class="desig">{{EmpDetails?.employeeDesignation}}
+                                        ({{EmpDetails?.genId}})</small></h6>
+                                <hr />
+                            </div>
+
+                            <div class="col-md-6">
+                                <p><b>Business Unit:</b><span class="label-set">{{EmpDetails?.buName}}</span></p>
+                                <p><b>Function:</b><span class="label-set"></span>{{EmpDetails?.functionName}}</p>
+                                <p><b>Supervisor Name:</b><span class="label-set">{{EmpDetails?.supervisor}}</span></p>
+                                <p><b>Supervisor Designation:</b><span class="label-set">{{EmpDetails?.supervisorDesg}}</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>Corporate:</b><span class="label-set">{{EmpDetails?.buName}}</span></p>
+                                <p><b>Work Phone:</b><span class="label-set">{{EmpDetails?.workPhone}}</span></p>
+                                <p><b>Work Phone Extn:</b><span class="label-set">{{EmpDetails?.workPhoneExt}}</span></p>
+                                <p><b>Company E-mail:</b><span class="label-set">{{EmpDetails?.emailId}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <ul class="nav navbar-vertical navbar-right bg-danger">
+                            <li><a class="lnk_usr text-dgr-link" title="send intrest">
+                                    <span class="tooltp text-center"> {{EmpDetails?.emailId}}</span>
+                                    <i class="fa fa-envelope-o fa-2x ddd" aria-hidden="true"></i>
+                                </a>
+
+                            </li><br />
+                            <li><a class="lnk_usr text-dgr-link" title="Contacts">
+                                    <span class="tooltp text-center"> Contacts!</span>
+                                    <i class="fa fa-phone fa-2x ddd" aria-hidden="true"></i>
+                                </a></li><br />
+                            <li><a class="lnk_usr text-dgr-link" title="Chat">
+                                    <span class="tooltp text-center"> Chat!</span>
+                                    <i class="fa fa-comment-o fa-2x ddd" aria-hidden="true"></i>
+                                </a></li><br />
+                            <li><a class="lnk_usr text-dgr-link" title="shortlist">
+                                    <span class="tooltp text-center"> shortlist!</span>
+                                    <i class="fa fa-star-o fa-2x ddd" aria-hidden="true"></i>
+                                </a></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <div class="details-brief">
+
+            <div class="row">
+
+                <div class="col-md-3" *ngFor="let temp of data | unique: 'empTabType'">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ temp.empTabType }} <span class="icon-set"><i class="fa fa-building-o"
+                                        aria-hidden="true"></i></span></h5>
+                            <span>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <p *ngIf="showEditLink"> <a class="details_emp" (click)="showModal(temp)">Details</a>
+                                </p>
+                                <p *ngIf="showAddLink"> <a class="details_emp" (click)="showModal(temp)">Add</a> </p>
+
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+      

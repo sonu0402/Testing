@@ -1,0 +1,114 @@
+<!-- main app container -->
+<div class="">
+  <div class="setting-edit">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-sets"><span class="tex-sets">Compensation<span class="span-set"> <i (click)="dialogRef.close()"
+                class="fa fa-times-circle"></i></span> </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label>Education Level</label>
+                <select type="text" name="education" class="form-control" formControlName="education" [ngClass]="{ 'is-invalid': submitted && f.education.errors }">
+
+                  <option selected="true" id="selct-opt" disabled>---Select
+                    Education Level---</option>
+                  <option value="Graduation">School</option>
+                  <option value="Post Graduation">Graduation</option>
+                  <option value="P.hd<">Post Graduation</option>
+                  <option value="Doctrate">Doctrate</option>
+
+
+
+                </select>
+                <div *ngIf="submitted && f.education.errors" class="invalid-feedback">
+                  <div *ngIf="f.education.errors.required">Education Level is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Qualification:</label>
+                <select type="text" name="education" class="form-control" formControlName="qualification" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }" >
+
+                  <option selected="true" id="selct-opt" disabled>---Select
+                    Education Level---</option>
+                  <option value="Graduation">School</option>
+                  <option value="Post Graduation">Graduation</option>
+                  <option value="P.hd<">Post Graduation</option>
+                  <option value="Doctrate">Doctrate</option>
+
+
+
+                </select>
+                <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                  <div *ngIf="f.qualification.errors.required">Qualification is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>College:</label>
+                <input type="text" formControlName="College" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.College.errors }" />
+                <div *ngIf="submitted && f.College.errors" class="invalid-feedback">
+                  <div *ngIf="f.College.errors.required">College is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Area of Specilization:</label>
+                <input type="text" formControlName="spec" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.spec.errors }" />
+                <div *ngIf="submitted && f.spec.errors" class="invalid-feedback">
+                  <div *ngIf="f.spec.errors.required">Area of Specilization is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Year of Passing:</label>
+                <select type="text" class="form-control" formControlName="year" [ngClass]="{ 'is-invalid': submitted && f.year.errors }" >
+
+                  <option selected="true" id="selct-opt" disabled>---Select
+                    Education Level---</option>
+                  <option value="Graduation">School</option>
+                  <option value="Post Graduation">Graduation</option>
+                  <option value="P.hd<">Post Graduation</option>
+                  <option value="Doctrate">Doctrate</option>
+
+
+
+                </select>
+                <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+                  <div *ngIf="f.year.errors.required">Year of Passing is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Score:</label>
+                <input type="text" formControlName="score" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.score.errors }" />
+                <div *ngIf="submitted && f.score.errors" class="invalid-feedback">
+                  <div *ngIf="f.score.errors.required">Score is required</div>
+                </div>
+              </div>
+
+              <label>Is this your Highest level of education:
+              </label>
+              <br>
+              <mat-radio-group>
+                <mat-radio-button value="1">Yes</mat-radio-button>&nbsp;&nbsp;
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+              <br>
+              <div class="form-group">
+                <button class="btn btn-primary">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

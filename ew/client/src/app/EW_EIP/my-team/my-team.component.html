@@ -1,0 +1,292 @@
+<app-navbar></app-navbar>
+<br>
+<section id="team" class="pb-5" >
+  <div class="container pageMargin" style="    margin-right: 11%;
+  ">
+    <h5 class="section-title h1">MY TEAM</h5>
+
+    <div class="row">
+        <div class="col-md-6">
+        <div class="navbar">
+                <div class="row">
+                        <div class="col-md-6">
+                          <button class="but-wid"> <a [routerLink]="['/myTeam']">
+                             <span class="glyphicon glyphicon-th-large"></span>
+                             <span class="card-views">  Card View</span>
+                           </a></button>
+                           </div>
+                           <div class="col-md-6">
+                           <button class="but-wid">
+                           <a [routerLink]="['/myTeamListView']" > 
+                             <span class="glyphicon glyphicon-align-justify"></span>
+                             <span class="card-views"> List View</span>
+                           </a>
+                         </button>
+                       </div>
+                         </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <nav class="navbar">
+            <input class="form-control searching-emp" Placeholder="search" type="search" name="search" [(ngModel)]="filter">
+          </nav>
+        
+        
+        </div>
+        </div>
+    <br>
+
+    <div class="row" >
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let element of MyTeamData | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip" >
+            <div class="frontside" >
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
+                      alt="card image"></p>
+                  <h4 class="card-title">{{element.userName}}</h4>
+                  <p class="card-text"><b>Email Id:</b>{{element.emailId}}</p>
+                  <p class="card-text"><b>Employee Designation::</b>{{element.employeeDesignation}}</p>
+
+                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="backside" >
+              <div class="card">
+                <div class="card-body text-center mt-4" >
+                  <h4 class="card-title">{{element.userName}} Details</h4>
+                  <div class="card-text">
+                    <ul class="team-emp-detail">
+                      <li><small><b>Business Unit:</b></small><small>{{element.buName}}</small></li>
+                      <li><small><b>Function:</b></small><small>{{element.functionName}}</small></li>
+                      <li><small><b>Location Name:</b></small><small>{{element.locationName}}</small></li>
+                      <li><small><b>Company Email: </b></small><small>{{element.userName}}</small></li>
+                      <li><small><b>Work Phone: </b></small><small>{{element.workPhone}}</small></li>
+
+
+                    </ul>
+
+                  </div>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href="#">
+                        <i class="fa fa-google"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- ./Team member -->
+      <!-- Team member -->
+
+      <!-- ./Team member -->
+      <!-- Team member -->
+
+      <!-- ./Team member -->
+      <!-- Team member -->
+
+      <!-- ./Team member -->
+      <!-- Team member -->
+
+      <!-- ./Team member -->
+
+    </div>
+<div class ="row paginate">
+  
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  </div>
+</section>
+
+
+
+<!-- <header>
+  <nav class="navbar navbar-default">
+    <a class="navbar-brand" href="#">Ma Games</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="row">
+    <nav class="navbar">
+      <input class="form-control" type="text" name="search" [(ngModel)]="filter">
+    </nav>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th (click)="sort('name')">Name
+            <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+          <th (click)="sort('genre')">Genre
+            <span class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let game of games | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+          <td>{{i}}</td>
+          <td>{{game.name}}</td>
+          <td>{{game.genre}}</td>
+        </tr>
+      </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </table>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+        <h2>Filter</h2>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><p><b>Company</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in tab-color">
+              <div class="panel-body"> <div class="checkbox">
+                <label><input type="checkbox" value="">All</label>
+              </div></div>
+    
+              <div class="panel-body"> <div class="checkbox">
+                <label><input type="checkbox" value="">Global Groupware Solution</label>
+              </div></div>
+    
+    
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse2"><p><b>Bussiness Unit</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+                    <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">All</label>
+                          </div></div>
+                
+                          <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">GGSL</label>
+                          </div></div>
+            
+            </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse3"><p><b>Location</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">
+                    <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">All</label>
+                          </div></div>
+                
+                          <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">Corporate Office</label>
+                          </div></div>
+            
+            </div>
+            </div>
+          </div>
+    
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse4"><p><b>Grade</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse">
+              <div class="panel-body">
+                    <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">All</label>
+                          </div></div>
+                
+                          <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">G0</label>
+                          </div></div>
+                          <div class="panel-body"> <div class="checkbox">
+                                <label><input type="checkbox" value="">G1</label>
+                              </div></div>
+    
+                              <div class="panel-body"> <div class="checkbox">
+                                    <label><input type="checkbox" value="">G2</label>
+                                  </div></div>
+    
+                                  <div class="panel-body"> <div class="checkbox">
+                                        <label><input type="checkbox" value="">G3</label>
+                                      </div></div>
+    
+                                      <div class="panel-body"> <div class="checkbox">
+                                            <label><input type="checkbox" value="">G3</label>
+                                          </div></div>
+    
+    
+            
+            </div>
+            </div>
+          </div>
+    
+    
+    
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse5"><p><b>Function</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse5" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+    
+    
+    
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse6"><p><b>Function</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+    
+    
+    
+    
+        </div> 
+    </div> -->

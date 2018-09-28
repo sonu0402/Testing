@@ -1,0 +1,219 @@
+<app-navbar></app-navbar>
+<br>
+<section id="team" class="pb-5" >
+    <div class="container">
+      <h5 class="section-title h1">MY TEAM</h5>
+  
+
+<div class="row">
+<div class="col-md-6">
+<div class="navbar">
+        <div class="row">
+                <div class="col-md-6">
+                  <button class="but-wid"> <a [routerLink]="['/myTeam']">
+                     <span class="glyphicon glyphicon-th-large"></span>
+                     <span class="card-views">  Card View</span>
+                   </a></button>
+                   </div>
+                   <div class="col-md-6">
+                   <button class="but-wid">
+                   <a [routerLink]="['/myTeamListView']" > 
+                     <span class="glyphicon glyphicon-align-justify"></span>
+                     <span class="card-views"> List View</span>
+                   </a>
+                 </button>
+               </div>
+                 </div>
+</div>
+</div>
+<div class="col-md-6">
+<nav class="navbar">
+    <input class="form-control searching-emp" Placeholder="search" type="search" name="search" [(ngModel)]="filter">
+  </nav>
+
+
+</div>
+</div>
+<br>
+<div class="container">
+<div class="row grid-container">
+   
+    <div class="col-md-12">
+        <div class="table">
+            <table class="table table-striped table-hover set-width-tab">
+                <thead>
+                    <tr >
+                        <th>&nbsp;</th>
+                        <th cmSortBy="business" >Employee Name</th>
+                        <th cmSortBy="business" >Designation</th>
+                        <th cmSortBy="function" >Function</th>
+                        <th cmSortBy="corporate" >Corporate</th>
+                        <th cmSortBy="supervisor" >Location Name</th>
+                        <th cmSortBy="email" >Company E-mail</th>
+                        <th cmSortBy="email" >Work Phone</th>
+                        <th cmSortBy="email" >Business Unit</th>
+                        <!-- Or you can do this directly rather than using sort-by directive -->
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let element of MyTeamData | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+                        <td><img src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
+                                class="grid-image" alt="Customer Image" /></td>
+                        <td><a>{{element.userName}}</a></td>
+                        <td><a>{{element.employeeDesignation}}</a></td>
+                        <td><a>{{element.functionName}}</a></td>
+                        <td><a>{{element.supervisor}}</a></td>
+                        <td><a>{{element.locationName}}</a></td>
+                        <td><a>{{element.emailId}}</a></td>
+                        <td><a>{{element.workPhone}}</a></td>
+                        <td><a>{{element.buName}}</a></td>
+
+                      
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+<div class ="row paginater">
+<pagination-controls class="paginate" (pageChange)="p = $event"></pagination-controls>
+</div>
+
+</div>
+</section>
+
+
+<!-- <div class="container">
+        <h2>Filter</h2>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><p><b>Company</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in tab-color">
+              <div class="panel-body"> <div class="checkbox">
+                <label><input type="checkbox" value="">All</label>
+              </div></div>
+    
+              <div class="panel-body"> <div class="checkbox">
+                <label><input type="checkbox" value="">Global Groupware Solution</label>
+              </div></div>
+    
+    
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse2"><p><b>Bussiness Unit</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+                    <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">All</label>
+                          </div></div>
+                
+                          <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">GGSL</label>
+                          </div></div>
+            
+            </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse3"><p><b>Location</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">
+                    <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">All</label>
+                          </div></div>
+                
+                          <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">Corporate Office</label>
+                          </div></div>
+            
+            </div>
+            </div>
+          </div>
+    
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse4"><p><b>Grade</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse">
+              <div class="panel-body">
+                    <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">All</label>
+                          </div></div>
+                
+                          <div class="panel-body"> <div class="checkbox">
+                            <label><input type="checkbox" value="">G0</label>
+                          </div></div>
+                          <div class="panel-body"> <div class="checkbox">
+                                <label><input type="checkbox" value="">G1</label>
+                              </div></div>
+    
+                              <div class="panel-body"> <div class="checkbox">
+                                    <label><input type="checkbox" value="">G2</label>
+                                  </div></div>
+    
+                                  <div class="panel-body"> <div class="checkbox">
+                                        <label><input type="checkbox" value="">G3</label>
+                                      </div></div>
+    
+                                      <div class="panel-body"> <div class="checkbox">
+                                            <label><input type="checkbox" value="">G3</label>
+                                          </div></div>
+    
+    
+            
+            </div>
+            </div>
+          </div>
+    
+    
+    
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse5"><p><b>Function</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse5" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+    
+    
+    
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapse6"><p><b>Function</b><i class="fa fa-plus" style="font-size:24px"></i></p></a>
+              </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+    
+    
+    
+    
+        </div> 
+    </div> -->

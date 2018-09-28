@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.ggsl</groupId>
+    <artifactId>ew</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_mainapp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>ew_mainapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <src.dir>ew</src.dir>
+  </properties>
+
+    <build>
+        <sourceDirectory>${src.dir}</sourceDirectory>
+    </build>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <dependencies>
+  
+  	<dependency>
+	  	<groupId>org.ggsl</groupId>
+	  	<artifactId>ew_eip</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.ggsl</groupId>
+	  	<artifactId>ew_payroll</artifactId>
+	  	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  	<dependency>
+  		<groupId>org.ggsl</groupId>
+  		<artifactId>ew_utility</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	
+  	<dependency>
+  	<groupId>org.ggsl</groupId>
+  <artifactId>ew_attendance</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  	
+  	<dependency>
+  	<groupId>org.ggsl</groupId>
+  <artifactId>ew_compensation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_timesheet</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_separation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_setup</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+   <groupId>org.ggsl</groupId>
+  <artifactId>ew_shared</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>  
+  
+  <dependency>
+   <groupId>org.ggsl</groupId>
+  <artifactId>ew_ea</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_leave</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_pms</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_travel</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_ob</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>ew_learning</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  <dependency>
+  <groupId>org.ggsl</groupId>
+  <artifactId>client</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  
+  <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

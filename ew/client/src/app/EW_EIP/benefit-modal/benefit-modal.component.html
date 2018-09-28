@@ -1,0 +1,240 @@
+<div class="">
+    <div class="setting-edit">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-sets"><span class="tex-sets">Default<span class="span-set"> <i (click)="dialogRef.close()"
+                                class="fa fa-times-circle"></i></span> </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sass -->
+        <div class="container back-head-color">
+
+            <!--     <div class="row">
+                  <div class="col-md-6">
+                  <label><b>Employee Name:</b></label><span>  {{EmpDetails.userName}}</span>
+                  
+                    </div>
+                  
+                    <div class="col-md-6">
+                        <label><b>Employee Code:</b></label><span>   {{EmpDetails.genId}}</span>
+                  
+                      </div>
+                  
+                  
+                  </div> -->
+
+        </div>
+
+        <div class="row pad-setting">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                        aria-selected="true">Default</a>
+                </li>
+
+
+            </ul>
+            <div class="tab-content setting-tab-width" id="myTabContent">
+
+
+
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="text-sets edu"><span class="tex-sets">Default</span>
+                    </div>
+                    <div class="row padd-set">
+
+                        <div class="col-md-12">
+                            <div class="cheking-to">
+                                <div class="view">
+                                    <div class="container">
+                                        <br />
+                                        <form [formGroup]="loginForm" class="login-form" novalidate>
+                                            <div class="login">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <small><b>Education Level:</b></small>
+                                                    </div>
+                                                    <div class="col-md-10">
+
+                                                        <select type="text" name="education" class="form-control"
+                                                            formControlName="education">
+
+                                                            <option selected="true" id="selct-opt" disabled>---Select
+                                                                Education Level---</option>
+                                                            <option value="Graduation">School</option>
+                                                            <option value="Post Graduation">Graduation</option>
+                                                            <option value="P.hd<">Post Graduation</option>
+                                                            <option value="Doctrate">Doctrate</option>
+
+
+
+                                                        </select>
+
+                                                        <div class="alert alert-danger" [hidden]="loginForm.controls.education.untouched || loginForm.controls.education.valid">
+                                                            A valid email address is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <small><b>Qualification / Degree*:</b></small>
+                                                    </div>
+                                                    <div class="col-md-10">
+
+                                                        <select type="text" name="qualification" class="form-control"
+                                                            formControlName="qualification">
+
+                                                            <option selected="true" id="selct-opt" disabled>---Select
+                                                                Education Level---</option>
+                                                            <option value="Graduation">School</option>
+                                                            <option value="Post Graduation">Graduation</option>
+                                                            <option value="P.hd<">Post Graduation</option>
+                                                            <option value="Doctrate">Doctrate</option>
+
+
+
+                                                        </select>
+
+                                                        <div class="alert alert-danger" [hidden]="loginForm.controls.qualification.untouched || loginForm.controls.qualification.valid">
+                                                            A valid Qualification is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <small> <b> College / Institute / Univ:</b></small>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <input type="text" name="College" class="form-control"
+                                                            formControlName="College" />
+                                                        <div class="alert alert-danger" [hidden]="loginForm.controls.College.untouched || loginForm.controls.College.valid">
+                                                            College / Institute / Univ is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <small> <b>Area of specilization:</b></small>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <input type="text" name="spec" class="form-control"
+                                                            formControlName="spec" />
+                                                        <div class="alert alert-danger" [hidden]="loginForm.controls.spec.untouched || loginForm.controls.spec.valid">
+                                                            Area of specilization is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <small> <b>Year of passing</b></small>
+                                                    </div>
+                                                    <div class="col-md-10">
+
+                                                        <select type="text" name="year" class="form-control"
+                                                            formControlName="year">
+
+                                                            <option selected="true" id="selct-opt" disabled>---Select
+                                                                Education Level---</option>
+                                                            <option value="Graduation">School</option>
+                                                            <option value="Post Graduation">Graduation</option>
+                                                            <option value="P.hd<">Post Graduation</option>
+                                                            <option value="Doctrate">Doctrate</option>
+
+
+
+                                                        </select>
+
+                                                        <div class="alert alert-danger" [hidden]="loginForm.controls.year.untouched || loginForm.controls.year.valid">
+                                                            year of passing is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <small> <b>Score:</b></small>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <input type="text" name="score" class="form-control"
+                                                            formControlName="score" />
+                                                        <div class="alert alert-danger" [hidden]="loginForm.controls.score.untouched || loginForm.controls.score.valid">
+                                                            Score is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <small> <b>Is this your Highest level of education:</b></small>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <div class="">
+                                                            <input type="radio" formControlName="empHighest" value="Y">Yes
+                                                            <input type="radio" formControlName="empHighest" value="N">No
+                                                        </div>
+                                                        <div class="alert alert-danger" [hidden]="loginForm.controls.empHighest.untouched || loginForm.controls.empHighest.valid">
+                                                            this is required field
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn set-colors" [disabled]="!loginForm.valid">Save</button>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="statusRow">
+                                                    <br />
+                                                    <div class="label label-important" *ngIf="errorMessage">
+                                                        <span class="glyphicon glyphicon-thumbs-down icon-white"></span>&nbsp;&nbsp;Error:
+                                                        {{ errorMessage }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    Two
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    three
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>

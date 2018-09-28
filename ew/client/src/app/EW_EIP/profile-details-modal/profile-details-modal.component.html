@@ -1,0 +1,425 @@
+<cm-growler position="top-right" timeout="2000"></cm-growler>
+
+<div class="" *ngIf="!showQual">
+  <div class="setting-edit">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-sets"><span class="tex-sets">{{Labels["952"]?._name}}<span class="span-set"> <i (click)="dialogRef.close()"
+                class="fa fa-times-circle"></i></span> </span>
+        </div>
+      </div>
+    </div>
+
+<!-- Sass --><div class="container back-head-color">
+
+        <div class="row">
+            <div class="col-md-6">
+            <label><b>Employee Name:</b></label><span>  {{EmpDetailss.userName}}</span>
+            
+              </div>
+            
+              <div class="col-md-6">
+                  <label><b>Employee Code:</b></label><span>   {{EmpDetailss.genId}}</span>
+            
+                </div>
+            
+            
+            </div>
+            
+            </div>
+
+    <div class="row pad-setting">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Education</a>
+        </li>
+
+
+      </ul>
+      <div class="tab-content setting-tab-width" id="myTabContent">
+
+
+
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="text-sets edu"><span class="tex-sets">{{Labels["951"]?._name}}</span>
+          </div>
+          <div class="addeducation"> <a class="set-mar" style="cursor: pointer;color:darkcyan;" (click)="addNewQual()">
+            {{Labels["950"]?._name}}</a></div>
+          <div class="row padd-set">
+
+            <div class="col-md-12">
+              <div style="overflow-x:auto;">
+                <table>
+                  <tr id="edu-qualification">
+                    <th><small>Education Level</small></th>
+                    <th><small>Qualification / Degree</small></th>
+                    <th><small>College / Institute / Univ</small></th>
+                    <th><small>Area of Specialisation</small></th>
+                    <th><small>Year of passing</small> </th>
+                    <th><small>Score</small></th>
+                    <th>Action</th>
+
+
+                  </tr>
+
+
+                  <tr *ngFor="let element of EducationDetails">
+                    <td>{{element.eduLevelId}}</td>
+                    <td>{{element.qualification}}</td>
+                    <td>{{element.college}}</td>
+                    <td>{{element.spec}}</td>
+                    <td>{{element.year}}</td>
+                    <td>{{element.egrade}}</td>
+                    <td [routerLink]="['/myProfile']" style="color:darkcyan;">Edit</td>
+
+
+                  </tr>
+                </table>
+                <!-- <div class = "row" *ngFor = "let hh of jjj">
+
+<div >{{hh}}</div>
+
+                </div> -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          Two
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          three
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- sanchit -->
+
+
+<div class="" *ngIf="showQual">
+  <div class="setting-edit">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-sets"><span class="tex-sets">Education Background<span class="span-set"> <i (click)="dialogRef.close()"
+                class="fa fa-times" aria-hidden="true"></i></span> </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item ">
+          <a class="nav-link active edu-setting" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><small>Education</small></a>
+        </li>
+
+
+      </ul>
+      <div class="tab-content setting-tab-width" id="myTabContent">
+
+
+
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="text-sets edu"><span class="tex-sets">Education</span>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <div class="edit-page">
+
+                <form [formGroup]="educationForm" class="educationForm" novalidate>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group" *ngIf="Labels['43']?._req == 'Y'" >
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label><small><b>{{Labels["43"]?._name}}<b *ngIf="Labels['43']?._man == 'Y'">*</b>:</b></small></label>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="">
+                              <select class="edu-level" formControlName="eduLevelId">
+                                <option selected="true" id="selct-opt" disabled>company</option>
+                                <option value="1">Volvo</option>
+                                <option value="2">Saab</option>
+                                <option value="3">Mercedes</option>
+                                <option value="4">Audi</option>
+                              </select>
+                            </div>
+
+
+                          <div *ngIf="educationForm.get('eduLevelId').invalid && isValidFormSubmitted != null && !isValidFormSubmitted && Labels['44']?._man == 'Y'" [ngClass]="'error'">
+                              <ul class="a pad-ul">
+                                <li class="edu-color">
+                                  <small> {{Labels["5000"]?._name}}</small></li>
+                              </ul>
+                            </div> 
+
+
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group" *ngIf="Labels['44']?._req == 'Y'">
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label><small><b>{{Labels["44"]?._name}}<b *ngIf="Labels['44']?._man == 'Y'">*</b>:</b></small></label>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="">
+                              <select class="edu-level" formControlName="qualification">
+                                <option selected="true" id="selct-opt" disabled>company</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                              </select>
+                            </div>
+
+
+                            <div *ngIf="educationForm.get('qualification').invalid && isValidFormSubmitted != null && !isValidFormSubmitted && Labels['44']?._man == 'Y'" [ngClass]="'error'">
+                              <ul class="a pad-ul">
+                                <li class="edu-color">
+                                  <small> {{Labels["5001"]?._name}}</small></li>
+                              </ul>
+                            </div>
+
+
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group" *ngIf="Labels['45']?._req == 'Y'">
+
+                        <div class="row">
+                          <div class="col-md-6 pad-set">
+                            <label><small><b>{{Labels["45"]?._name}}<b *ngIf="Labels['45']?._man == 'Y'">*</b>:</b></small></label>
+                          </div>
+                          <div class="col-md-6 pad-set">
+                            <div class="">
+                              <textarea formControlName="college" class="edu-level" rows="3" cols="14" ngModal>
+                                            
+                                       </textarea>
+                            </div>
+
+                            <div *ngIf="educationForm.get('college').invalid && isValidFormSubmitted != null && !isValidFormSubmitted && Labels['45']?._man == 'Y'" [ngClass]="'error'">
+                              <ul class="a pad-ul">
+                                <li class="edu-color">
+                                  <small>{{Labels["5002"]?._name}}</small></li>
+                              </ul>
+                            </div>
+
+
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group" *ngIf="Labels['46']?._req == 'Y'">
+
+                        <div class="row">
+                          <div class="col-md-6 area-speci">
+                            <label><small><b>{{Labels["46"]?._name}}<b *ngIf="Labels['46']?._man == 'Y'">*</b>:</b> </small></label>
+                          </div>
+                          <div class="col-md-6 ">
+                            <div class="">
+                              <textarea formControlName="spec" class="edu-level" rows="3" cols="14" ngModal>
+                                            
+                                             </textarea>
+                            </div>
+
+                            <div *ngIf="educationForm.get('spec').invalid && isValidFormSubmitted != null && !isValidFormSubmitted && Labels['46']?._man == 'Y'" [ngClass]="'error'">
+                              <ul class="a pad-ul">
+                                <li class="edu-color">
+                                  <small>{{Labels["5003"]?._name}}</small></li>
+                              </ul>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group" *ngIf="Labels['48']?._req == 'Y'">
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label><small><b>{{Labels["48"]?._name}}<b *ngIf="Labels['48']?._man == 'Y'">*</b>:</b></small></label>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="">
+                              <select formControlName="year" class="edu-level" ngModal>
+                                <option selected="true" id="selct-opt" disabled><small>Passing year</small></option>
+                                <option value="volvo">2010</option>
+                                <option value="saab">2012</option>
+                                <option value="mercedes">2014</option>
+                                <option value="audi">2016</option>
+                              </select>
+                            </div>
+
+
+                            <div *ngIf="educationForm.get('year').invalid && isValidFormSubmitted != null && !isValidFormSubmitted && Labels['48']?._man == 'Y'" [ngClass]="'error'">
+                              <ul class="a pad-ul">
+                                <li class="edu-color">
+                                  <small>{{Labels["5004"]?._name}}</small></li>
+                              </ul>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+
+
+                      <div class="form-group" *ngIf="Labels['47']?._req == 'Y'">
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label><small><b>{{Labels["47"]?._name}}<b *ngIf="Labels['47']?._man == 'Y'">*</b>:</b></small></label>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="">
+                              <input formControlName="egrade" class="edu-level" type="text" ngModal>
+                            </div>
+
+
+                            <div *ngIf="educationForm.get('egrade').invalid && isValidFormSubmitted != null && !isValidFormSubmitted && Labels['47']?._man == 'Y'" [ngClass]="'error'">
+                            
+                              <ul class="a pad-ul">
+                                  <li class="edu-color">
+                                    <small> {{Labels["5005"]?._name}}</small></li>
+                                </ul>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group" *ngIf="Labels['49']?._req == 'Y'">
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label><small><b>{{Labels["49"]?._name}}<b *ngIf="Labels['49']?._man == 'Y'">*</b>:</b></small></label>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="">
+                              <input type="radio" formControlName="empHighest" value="Y">Yes
+                              <input type="radio" formControlName="empHighest" value="N">No
+                            </div>
+                            <!-- <div *ngIf="educationForm.get('empHighest').invalid && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                              <ul class="a">
+                                <li>
+                                  Highest Education Level is required</li>
+                              </ul>
+                            </div> -->
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+<div class="col-md-6">
+ 
+  <div class="row">
+    <div class="col-sm-6">
+      <label><small><b>Choose a file:</b></small></label>
+     
+    </div>
+    <div class="col-sm-6">
+        <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+     
+      <!-- <div *ngIf="educationForm.get('empHighest').invalid && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+        <ul class="a">
+          <li>
+            Highest Education Level is required</li>
+        </ul>
+      </div> -->
+
+    </div>
+  </div>
+                 
+  <img [src]="imageUrl"  style="width:100px;height:100px">
+                   
+</div>
+
+
+                  </div>
+
+
+
+
+
+
+
+
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" (click)="onFormSubmit()" class="btn btn-default plus">Save</button>
+                      <a [routerLink]="['/myProfile']" class="cancels">Cancel</a>
+                    </div>
+
+
+
+                  </div>
+
+
+                </form>
+
+
+
+
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
